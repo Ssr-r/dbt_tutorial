@@ -7,7 +7,7 @@ SELECT
 	status
 	increment_id,
 	sku,
-	--discount order_batches ana verisinde mevcut dict �eklinde
+	--discount order_batches ana verisinde mevcut dict seklinde
 	qty_ordered,
 	price,
 	base_cost,

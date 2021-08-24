@@ -5,6 +5,7 @@ SELECT
 	firstname as name,
 	middle_name,
 	lastname as last_name,
+	email,
 	dob,
 	gender,
 	is_active
