@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: orchestra
+    database: crm
+    schema: public
+    tables:
+      - name: campaigns_table
+      - name: customer_entity
+        #columns: POSTGRE'DE hata var, tekrar data çekip ekle
+        #  - name: entity_id
+        #    description: Primary key of table
+        #    tests:
+        #      - unique
+        #      - not_null
+      - name: date_table
+      - name: merchant_table
+      - name: order_batches
+      - name: order_lines
+      - name: platform_table
+      - name: product_table
+      - name: status_table
