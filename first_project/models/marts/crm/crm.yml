@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: crm_customer_segment_table
+    description: Sum of transactions grouped by channel and site
+  - name: dim_crm_customers
+    description: Dimension table of crm customers.
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+  - name: fct_crm_daily_orders
+    description: Fact table of orders with daily grain.
+
+

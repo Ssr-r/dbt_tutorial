@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: dim_campaigns
+    description: Reduced version of stg_orchestra_campaigns.
+    columns:
+      - name: campaign_id
+        tests:
+          - unique
+          - not_null
+      - name: campaign_name
+      - name: campaign_type
+        description: Determines fixed rate, fixed Amount or free delivery.
+        tests:
+          - accepted_values:
+              values: [ 'CartFixedRate', 'CartFixedAmount', 'FreeDelivery' ]
+      - name: discount_amount
+  - name: dim_customers
+    description: Contains customers informations with if he\she has any order.
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+  - name: dim_dates
+    description: Utils table for dates. Pre-prepared table for dates. Shouldnt be changed. Needed to add new data after 2022.
+    columns:
+      - name: date_id
+        tests:
+          - unique
+          - not_null
+  - name: dim_marketplaces
+    description: Reduced version of stg_orchestra_marketplaces. Lookup table for marketplaces.
+    columns:
+      - name: marketplace_id
+        tests:
+          - unique
+          - not_null
+      - name: marketplace_name
+        tests:
+          - not_null
+  - name: dim_payments
+    description: Added for test propose, copy of dim_campaigns.
+  - name: dim_platforms
+    description: Lookup table for platforms.
+  - name: dim_status
+    description: Lookup table for status
+  - name: fct_orders
+    description: Transaction fact table of orders.
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: increment_id
+          - not_null
